@@ -1,60 +1,14 @@
-/* 页脚footer
-@-webkit-keyframes Gradient {
-    0% {
-        background-position: 0 50%;
-    }
- 
-    50% {
-        background-position: 100% 50%;
-    }
- 
-    100% {
-        background-position: 0 50%;
-    }
-}
- 
-@-moz-keyframes Gradient {
-    0% {
-        background-position: 0 50%;
-    }
- 
-    50% {
-        background-position: 100% 50%;
-    }
- 
-    100% {
-        background-position: 0 50%;
-    }
-}
- 
-@keyframes Gradient {
-    0% {
-        background-position: 0 50%;
-    }
- 
-    50% {
-        background-position: 100% 50%;
-    }
- 
-    100% {
-        background-position: 0 50%;
-    }
-}
+/* 页脚透明 */
 #footer {
-    background: linear-gradient(-45deg, #ee7752, #ce3e75, #23a6d5, #23d5ab);
-    background-size: 400% 400%;
-    -webkit-animation: Gradient 10s ease infinite;
-    -moz-animation: Gradient 10s ease infinite;
-    animation: Gradient 10s ease infinite;
-    -o-user-select: none;
-    -ms-user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+  background: transparent !important;
 }
-#footer:before {
-    background-color: rgba(0, 0, 0, 0);
+/* 页脚黑色透明玻璃效果移除 */
+#footer::before {
+  background: transparent !important;
 }
- */
+.footer_custom_text {
+  color: #000000;
+}
+.copyright {
+    color: #000000;
+  }
