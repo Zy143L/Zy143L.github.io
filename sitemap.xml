@@ -74,6 +74,20 @@
 
   
   <url>
+    <loc>https://momoe.ml/tags/%E9%AB%98%E9%80%9A/</loc>
+    <lastmod>2022-05-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://momoe.ml/tags/%E9%9A%8F%E8%BA%ABWIFI/</loc>
+    <lastmod>2022-05-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://momoe.ml/tags/%E5%B8%86%E8%BD%AF/</loc>
     <lastmod>2022-05-22</lastmod>
     <changefreq>weekly</changefreq>
@@ -96,20 +110,6 @@
   
   <url>
     <loc>https://momoe.ml/tags/Debian/</loc>
-    <lastmod>2022-05-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://momoe.ml/tags/%E9%AB%98%E9%80%9A/</loc>
-    <lastmod>2022-05-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://momoe.ml/tags/%E9%9A%8F%E8%BA%ABWIFI/</loc>
     <lastmod>2022-05-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
