@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://blog.shizuku.ml/shizuku/051911.html</loc>
+    <loc>https://momoe.ml/shizuku/051911.html</loc>
     
     <lastmod>2022-05-15</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://blog.shizuku.ml/shizuku/042422.html</loc>
+    <loc>https://momoe.ml/shizuku/042422.html</loc>
     
     <lastmod>2022-04-27</lastmod>
     
@@ -20,7 +20,7 @@
   </url>
   
   <url>
-    <loc>https://blog.shizuku.ml/shizuku/045009.html</loc>
+    <loc>https://momoe.ml/shizuku/045009.html</loc>
     
     <lastmod>2022-04-27</lastmod>
     
@@ -29,7 +29,7 @@
   </url>
   
   <url>
-    <loc>https://blog.shizuku.ml/shizuku/040709.html</loc>
+    <loc>https://momoe.ml/shizuku/040709.html</loc>
     
     <lastmod>2022-04-27</lastmod>
     
@@ -38,7 +38,7 @@
   </url>
   
   <url>
-    <loc>https://blog.shizuku.ml/shizuku/045635.html</loc>
+    <loc>https://momoe.ml/shizuku/045635.html</loc>
     
     <lastmod>2022-04-24</lastmod>
     
@@ -47,7 +47,7 @@
   </url>
   
   <url>
-    <loc>https://blog.shizuku.ml/shizuku/042608.html</loc>
+    <loc>https://momoe.ml/shizuku/042608.html</loc>
     
     <lastmod>2022-04-24</lastmod>
     
@@ -56,7 +56,7 @@
   </url>
   
   <url>
-    <loc>https://blog.shizuku.ml/tags/index.html</loc>
+    <loc>https://momoe.ml/tags/index.html</loc>
     
     <lastmod>2022-04-23</lastmod>
     
@@ -66,51 +66,51 @@
   
 
   <url>
-    <loc>https://blog.shizuku.ml/</loc>
-    <lastmod>2022-05-15</lastmod>
+    <loc>https://momoe.ml/</loc>
+    <lastmod>2022-05-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
-    <loc>https://blog.shizuku.ml/tags/%E5%B8%86%E8%BD%AF/</loc>
-    <lastmod>2022-05-15</lastmod>
+    <loc>https://momoe.ml/tags/%E5%B8%86%E8%BD%AF/</loc>
+    <lastmod>2022-05-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.shizuku.ml/tags/%E6%BC%8F%E6%B4%9E/</loc>
-    <lastmod>2022-05-15</lastmod>
+    <loc>https://momoe.ml/tags/%E6%BC%8F%E6%B4%9E/</loc>
+    <lastmod>2022-05-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.shizuku.ml/tags/POC/</loc>
-    <lastmod>2022-05-15</lastmod>
+    <loc>https://momoe.ml/tags/POC/</loc>
+    <lastmod>2022-05-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.shizuku.ml/tags/Debian/</loc>
-    <lastmod>2022-05-15</lastmod>
+    <loc>https://momoe.ml/tags/Debian/</loc>
+    <lastmod>2022-05-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.shizuku.ml/tags/%E9%AB%98%E9%80%9A/</loc>
-    <lastmod>2022-05-15</lastmod>
+    <loc>https://momoe.ml/tags/%E9%AB%98%E9%80%9A/</loc>
+    <lastmod>2022-05-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.shizuku.ml/tags/%E9%9A%8F%E8%BA%ABWIFI/</loc>
-    <lastmod>2022-05-15</lastmod>
+    <loc>https://momoe.ml/tags/%E9%9A%8F%E8%BA%ABWIFI/</loc>
+    <lastmod>2022-05-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
