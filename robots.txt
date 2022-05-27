@@ -1,11 +1,11 @@
 User-agent: *
 
-# 不允许访问的内容
+# Disallow
 Disallow: /img/
 Disallow: /css/
 Disallow: /js/
 Disallow: /*.css
 Disallow: /*.js
 
-Sitemap: https://blog.shizuku.ml/sitemap.xml
-Sitemap: https://blog.shizuku.ml/baidusitemap.xml
+Sitemap: https://momoe.ml/sitemap.xml
+Sitemap: https://momoe.ml/baidusitemap.xml
