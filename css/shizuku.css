@@ -64,3 +64,16 @@
     rgba(109, 186, 130, 0.1),
   );
 } */
+
+/* @font-face{
+  font-family: 'MiSans Normal';
+  
+  src: url('/font/MiSans-Normal.ttf') format("truetype");
+}
+
+body {
+  font-family: 'MiSans Normal';
+} */
+article p {
+  font-size: 15px;
+}
