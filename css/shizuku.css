@@ -6,7 +6,19 @@
   transform: rotate(0deg) !important;
 }
 
-#footer {
+#body-wrap {
+	background: linear-gradient(90deg,
+		rgba(247, 149, 51, 0.1) 0,
+		rgba(243, 112, 85, 0.1) 15%,
+		rgba(239, 78, 123, 0.1) 30%,
+		rgba(161, 102, 171, 0.1) 44%,
+		rgba(80, 115, 184, 0.1) 58%,
+		rgba(16, 152, 173, 0.1) 72%,
+		rgba(7, 179, 155, 0.1) 86%,
+		rgba(109, 186, 130, 0.1) 100%);
+}
+
+/* #footer {
   background: rgba(255, 255, 255, 0.15);
   color: #000;
   border-top-right-radius: 20px;
@@ -24,6 +36,28 @@
 
 #footer #footer-wrap a {
   color: var(--font-color);
+} */
+
+
+#footer {
+	background: rgba(255, 255, 255, .15);
+	color: #000;
+	border-top-right-radius: 20px;
+	border-top-left-radius: 20px;
+	-webkit-backdrop-filter: saturate(100%) blur(5px);
+	backdrop-filter: saturate(100%) blur(5px)
+}
+
+#footer::before {
+	background: rgba(255, 255, 255, .15);
+}
+
+#footer #footer-wrap {
+	color: var(--font-color);
+}
+
+#footer #footer-wrap a {
+	color: var(--font-color);
 }
 
 /* 文章页背景 */
@@ -76,4 +110,7 @@ body {
 } */
 article p {
   font-size: 15px;
+}
+#footer-wrap .footer_custom_text {
+  font-weight: bold;
 }
