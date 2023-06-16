@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>宁宁's Blog | 宁宁's Blog</title><meta name="author" content="Zy143L"><meta name="copyright" content="Zy143L"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content=""><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://momoe.ml/tmp/dsm7.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//static.cloudflareinsights.com"/><link rel="preconnect" href="//www.clarity.ms"/><meta name="google-site-verification" content="bN16XKV6xwtRGTvX1sw4mOJxS8pFqyAlHnNvQtE-wUg"/><meta name="baidu-site-verification" content="code-hZa23BQzZ9"/><link rel="stylesheet" href="/css/index.css?v=4.8.5"><link rel="stylesheet" href="/pluginsSrc/@fortawesome/fontawesome-free/css/all.min.css?v=6.4.0" media="print" onload="this.media='all'"><link rel="stylesheet" href="/pluginsSrc/@fancyapps/ui/dist/fancybox/fancybox.css?v=5.0.17" media="print" onload="this.media='all'"><script defer="defer" data-pjax="data-pjax" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;4f47f8db2b74431c9f30e3680209e627&quot;}"></script><script>(function(c,l,a,r,i,t,y){
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>ZTE固件解包与打包 | 宁宁's Blog</title><meta name="author" content="Zy143L"><meta name="copyright" content="Zy143L"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="ZTE固件解包与打包固件提取使用Flash编程器提取 例如 CH341A XTW100等 (个人推荐XTW系列)    偏移地址：4882432 (0x4A8000)  文件系统类型：Squashfs  字节序：Little endian  版本：4.0  压缩方式：xz  文件系统大小：29718"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://momoe.ml/tmp/ZTE_Fr.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//static.cloudflareinsights.com"/><link rel="preconnect" href="//www.clarity.ms"/><meta name="google-site-verification" content="bN16XKV6xwtRGTvX1sw4mOJxS8pFqyAlHnNvQtE-wUg"/><meta name="baidu-site-verification" content="code-hZa23BQzZ9"/><link rel="stylesheet" href="/css/index.css?v=4.8.5"><link rel="stylesheet" href="/pluginsSrc/@fortawesome/fontawesome-free/css/all.min.css?v=6.4.0" media="print" onload="this.media='all'"><link rel="stylesheet" href="/pluginsSrc/@fancyapps/ui/dist/fancybox/fancybox.css?v=5.0.17" media="print" onload="this.media='all'"><script defer="defer" data-pjax="data-pjax" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;4f47f8db2b74431c9f30e3680209e627&quot;}"></script><script>(function(c,l,a,r,i,t,y){
     c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
     t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
     y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
@@ -44,12 +44,12 @@
   },
   autoDarkmode: false
 }</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
-  title: '宁宁\'s Blog',
+  title: 'ZTE固件解包与打包',
   isPost: false,
   isHome: false,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2023-02-10 15:07:55'
+  postUpdate: '2023-06-16 20:35:57'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -153,15 +153,78 @@
       }
     }
     detectApple()
-    })(window)</script><link rel="stylesheet" href="/css/shizuku.css"><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/tx.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">22</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">15</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header" style="background-image: url('https://pic.rmb.bdstatic.com/bjh/11bed88ff07f9794cdbbd174da24cf1e.png')"><nav id="nav"><span id="blog-info"><a href="/" title="宁宁's Blog"><span class="site-name">宁宁's Blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="page-site-info"><h1 id="site-title">宁宁's Blog</h1></div></header><main class="layout" id="content-inner"><div id="page"><div id="article-container"><p><img src="https://kjimg10.360buyimg.com/ott/jfs/t1/137648/11/33683/32257/63e40c7dF63bd7944/b54fe25561148bc1.png" alt="image-20230209045626920"></p>
-<p><img src="https://kjimg10.360buyimg.com/ott/jfs/t1/118232/9/33176/48217/63e40c99Fae389c7b/ba77ac13b4650cb3.png" alt="image-20230209045656499"></p>
-<p><img src="https://kjimg10.360buyimg.com/ott/jfs/t1/123340/26/30071/8183/63e40d0aF3b74228a/cdddeade22e7e61d.png" alt="image-20230209045839916"></p>
-<p><img src="https://kjimg10.360buyimg.com/ott/jfs/t1/147309/6/34019/26112/63e40d2aF5de4474f/bce22ae0619e0589.png" alt="image-20230209045919805"></p>
-<p><img src="https://kjimg10.360buyimg.com/ott/jfs/t1/201055/13/27934/31792/63e40d48F6b90e3c3/c49f5790dc30f0e4.png" alt="image-20230209045950273"></p>
-<p><img src="https://kjimg10.360buyimg.com/ott/jfs/t1/61160/39/23077/21343/63e40d62F2f78c4a9/92bd491b235b914c.png" alt="image-20230209050016133"></p>
-<p><img src="https://kjimg10.360buyimg.com/ott/jfs/t1/61134/16/24444/13123/63e5afa1F8ddf3d42/9703d11cd7983fb8.png" alt="image-20230210104220230"></p>
-<p><img src="https://kjimg10.360buyimg.com/ott/jfs/t1/99056/4/36240/56388/63e5afa1F10c29692/293da8d467f7646c.png" alt="image-20230210104350741"></p>
-<p><img src="https://kjimg10.360buyimg.com/ott/jfs/t1/185124/10/32764/12737/63e5b001F162d306c/296f2020b612d763.png" alt="image-20230210104620282"></p>
+    })(window)</script><link rel="stylesheet" href="/css/shizuku.css"><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/tx.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">22</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">15</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header" style="background-image: url('https://pic.rmb.bdstatic.com/bjh/11bed88ff07f9794cdbbd174da24cf1e.png')"><nav id="nav"><span id="blog-info"><a href="/" title="宁宁's Blog"><span class="site-name">宁宁's Blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="page-site-info"><h1 id="site-title">ZTE固件解包与打包</h1></div></header><main class="layout" id="content-inner"><div id="page"><div id="article-container"><h1 id="ZTE固件解包与打包"><a href="#ZTE固件解包与打包" class="headerlink" title="ZTE固件解包与打包"></a>ZTE固件解包与打包</h1><h2 id="固件提取"><a href="#固件提取" class="headerlink" title="固件提取"></a>固件提取</h2><p><strong>使用Flash编程器提取 例如 CH341A XTW100等 (个人推荐XTW系列)</strong></p>
+<p><strong><img src="https://img14.360buyimg.com/ddimg/jfs/t1/120924/11/34007/145609/648c5723Fe0009d0e/4c4a6bbd06eb6893.jpg" alt="image-20230614153826317"></strong></p>
+<p><img src="https://img14.360buyimg.com/ddimg/jfs/t1/216370/38/30465/100479/6472fac6F03eaa276/899a05eb48e90224.jpg" alt="image-20230528145411843"></p>
+<ul>
+<li><p>偏移地址：4882432 (0x4A8000)</p>
+</li>
+<li><p>文件系统类型：Squashfs</p>
+</li>
+<li><p>字节序：Little endian</p>
+</li>
+<li><p>版本：4.0</p>
+</li>
+<li><p>压缩方式：xz</p>
+</li>
+<li><p>文件系统大小：2971894字节</p>
+</li>
+<li><p>inode数量：668</p>
+</li>
+<li><p>块大小：262144字节</p>
+</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dd if=YEBEI_TDD_8M.bin of=yb.sq bs=1 skip=4882432 count=2971894</span><br></pre></td></tr></table></figure>
+
+<p>安装 <code>squashfs-tools</code></p>
+<p><code>unsquashfs squashfs_image.sqfs</code></p>
+<p><code>mksquashfs squashfs-root/ new_squashfs_image.sqfs -comp xz -noappend -b 262144 -no-xattrs -always-use-fragments -all-root</code></p>
+<p><code>mksquashfs squashfs-root/ new_squashfs.bin -comp xz -b 262144 -noappend</code></p>
+<p><img src="https://img14.360buyimg.com/ddimg/jfs/t1/118124/12/34975/68736/64731128F893b47d5/251c68c7063c0b0b.jpg" alt="image-20230528163032326"></p>
+<p><code>dd if=new_squashfs_image.sqfs of=YEBEI_TDD_8M.bin bs=1 seek=4882432 conv=notrunc</code></p>
+<div class="note info no-icon flat"><div class="input-container">
+  <input type="text" id="imeiInput" maxlength="15" placeholder="请输入IMEI" class="custom-input" />
+  <button onclick="calculate()" class="custom-button">计算</button>
+<button id="result" class="result-container custom-button" onclick="copyResult()" style="display: none;">
+<span id="resultIcon"><i class="fas fa-paste"></i></span>
+<span id="resultText">结果</span>
+</button>
+
+
+</div></div>
+
+
+
+
+
+<script>
+function calculate() {
+  var imei = document.getElementById("imeiInput").value;
+
+  var a = imei[3] + imei[6];
+  var b = parseInt(a) + 0x7d;
+  var c = imei.slice(-6);
+  var d = c[0] + c[2] + c[1] + c.slice(-3);
+  var e = 4 * (parseInt(d) + b);
+  var resultText = document.getElementById("resultText");
+  var resultButton = document.getElementById("result");
+  resultText.innerText = "密码: " + e;
+  resultButton.style.display = "inline-block"; // 显示按钮
+}
+
+function copyResult() {
+  var resultButton = document.getElementById("result");
+  var resultText = resultButton.innerText.replace("密码: ", ""); // 提取结果文本
+
+  navigator.clipboard.writeText(resultText)
+    .then(function() {
+      alert("结果已复制到剪贴板！");
+    })
+    .catch(function(error) {
+      console.error("复制失败：", error);
+    });
+}
+</script>
 </div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/tx.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Zy143L</div><div class="author-info__description">前天是小兔，昨天是小鹿，今天是你。</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">22</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">15</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Zy143L"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Zy143L" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:admin@shizuku.ml" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="sticky_layout"><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E6%BC%8F%E6%B4%9E/" style="font-size: 1.1em; color: #999">漏洞</a> <a href="/tags/POC/" style="font-size: 1.1em; color: #999">POC</a> <a href="/tags/%E5%B8%86%E8%BD%AF/" style="font-size: 1.1em; color: #999">帆软</a> <a href="/tags/Debian/" style="font-size: 1.3em; color: #99a1ac">Debian</a> <a href="/tags/JD/" style="font-size: 1.1em; color: #999">JD</a> <a href="/tags/WSKEY/" style="font-size: 1.1em; color: #999">WSKEY</a> <a href="/tags/ShellCode/" style="font-size: 1.2em; color: #999da3">ShellCode</a> <a href="/tags/Linux/" style="font-size: 1.3em; color: #99a1ac">Linux</a> <a href="/tags/%E9%A9%B1%E5%8A%A8/" style="font-size: 1.2em; color: #999da3">驱动</a> <a href="/tags/Bypass/" style="font-size: 1.2em; color: #999da3">Bypass</a> <a href="/tags/%E9%9D%92%E9%BE%99/" style="font-size: 1.2em; color: #999da3">青龙</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 1.1em; color: #999">算法</a> <a href="/tags/%E9%AB%98%E9%80%9A/" style="font-size: 1.4em; color: #99a5b6">高通</a> <a href="/tags/SIM%E5%8D%A1/" style="font-size: 1.1em; color: #999">SIM卡</a> <a href="/tags/%E9%9A%8F%E8%BA%ABWIFI/" style="font-size: 1.5em; color: #99a9bf">随身WIFI</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/05/"><span class="card-archive-list-date">五月 2023</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/04/"><span class="card-archive-list-date">四月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/03/"><span class="card-archive-list-date">三月 2023</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/02/"><span class="card-archive-list-date">二月 2023</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/08/"><span class="card-archive-list-date">八月 2022</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/06/"><span class="card-archive-list-date">六月 2022</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/05/"><span class="card-archive-list-date">五月 2022</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/04/"><span class="card-archive-list-date">四月 2022</span><span class="card-archive-list-count">5</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">22</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">10.8k</div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-06-16T12:43:15.641Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Zy143L</div><div class="footer_custom_text">前天是小兔，昨天是小鹿，今天是你。</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.8.5"></script><script src="/js/main.js?v=4.8.5"></script><script src="/pluginsSrc/@fancyapps/ui/dist/fancybox/fancybox.umd.js?v=5.0.17"></script><script src="/pluginsSrc/instant.page/instantpage.js?v=5.2.0" type="module"></script><div class="js-pjax"><script>function loadWaline () {
   function initWaline () {
     const waline = Waline.init(Object.assign({
