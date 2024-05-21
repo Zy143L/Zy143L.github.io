@@ -1,0 +1,11 @@
+User-agent: *
+
+# Disallow
+Disallow: /img/
+Disallow: /css/
+Disallow: /js/
+Disallow: /*.css
+Disallow: /*.js
+
+Sitemap: https://170721.xyz/sitemap.xml
+Sitemap: https://170721.xyz/baidusitemap.xml

@@ -1,0 +1,168 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>5G CPE C8-660 | 宁宁's Blog</title><meta name="author" content="Zy143L"><meta name="copyright" content="Zy143L"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="未完成的文章！     http:&amp;#x2F;&amp;#x2F;192.168.66.1&amp;#x2F;cgi-bin&amp;#x2F;luci&amp;#x2F;admin&amp;#x2F;system&amp;#x2F;security    123456789root@nradio:&amp;#x2F;tmp# cat &amp;#x2F;proc&amp;#x2F;mtddev:    size   erasesize  namemtd0: 0800"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://170721.xyz/shizuku/124648.html"><link rel="preconnect"/><link rel="preconnect" href="//static.cloudflareinsights.com"/><link rel="preconnect" href="//www.clarity.ms"/><meta name="google-site-verification" content="bN16XKV6xwtRGTvX1sw4mOJxS8pFqyAlHnNvQtE-wUg"/><meta name="baidu-site-verification" content="code-hZa23BQzZ9"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="/pluginsSrc/@fortawesome/fontawesome-free/css/all.min.css?v=6.5.1"><link rel="stylesheet" href="/pluginsSrc/@fancyapps/ui/dist/fancybox/fancybox.css?v=5.0.33" media="print" onload="this.media='all'"><script defer="defer" data-pjax="data-pjax" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;4f47f8db2b74431c9f30e3680209e627&quot;}"></script><script>(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "bmcaragj2c");</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.json","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: '/pluginsSrc/@egjs/infinitegrid/dist/infinitegrid.min.js?v=4.11.1',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '5G CPE C8-660',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2024-05-21 17:52:11'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/shizuku.css"><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/tx.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">27</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">16</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://img12.360buyimg.com/ddimg/jfs/t1/246023/18/9590/5447/664c6e65F4789ecfe/98c47e949ddad67f.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="宁宁's Blog"><span class="site-name">宁宁's Blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">5G CPE C8-660</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-12-20T04:46:48.000Z" title="发表于 2023-12-20 12:46:48">2023-12-20</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-05-21T09:52:11.961Z" title="更新于 2024-05-21 17:52:11">2024-05-21</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">170</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>1分钟</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><div class="note warning flat"><p><strong>未完成的文章！</strong></p>
+</div>
+
+
+<p><img src="https://img10.360buyimg.com/babel/jfs/t20251110/111423/33/38882/37682/654f096bF95fe39f7/075af9b009d9cdba.png" alt="image-20231111125431585"></p>
+<p><code>http://192.168.66.1/cgi-bin/luci/admin/system/security</code></p>
+<p><img src="https://img10.360buyimg.com/babel/jfs/t20251110/164090/35/33810/2755/654f09cfF190709e4/8df1a65fac4b6c04.png" alt="image-20231111125746149"></p>
+<p><img src="https://img10.360buyimg.com/babel/jfs/t20251110/110674/25/34566/171804/654f0abaF125b1959/c40d3bed617acfe2.png" alt="image-20231111125845764"></p>
+<p><img src="https://img10.360buyimg.com/babel/jfs/t20251110/230275/11/2486/4728/654f0ad4Fb94c75cc/3186fef1d5b7a7d0.png" alt="image-20231111130204718"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">root@nradio:/tmp# cat /proc/mtd</span><br><span class="line">dev:    size   erasesize  name</span><br><span class="line">mtd0: 08000000 00020000 &quot;spi0.0&quot;</span><br><span class="line">mtd1: 00100000 00020000 &quot;BL2&quot;</span><br><span class="line">mtd2: 00080000 00020000 &quot;u-boot-env&quot;</span><br><span class="line">mtd3: 00180000 00020000 &quot;factory&quot;</span><br><span class="line">mtd4: 00080000 00020000 &quot;bdinfo&quot;</span><br><span class="line">mtd5: 00200000 00020000 &quot;FIP&quot;</span><br><span class="line">mtd6: 04000000 00020000 &quot;ubi&quot;</span><br></pre></td></tr></table></figure>
+
+<p>.&#x2F;nc -l -p 3333 &gt; bdinfo.bin</p>
+<p>cat &#x2F;dev&#x2F;mtd4 | nc 192.168.66.202 3333</p>
+<p>.&#x2F;nc -l -p 3333 &gt; factory.bin</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">root@nradio:/tmp# mtd erase u-boot-env</span><br><span class="line">Unlocking u-boot-env ...</span><br><span class="line">Erasing u-boot-env ...</span><br><span class="line">root@nradio:/tmp# mtd write /tmp/mt7981_nradio_c8-660-u-boot-web.fip FIP</span><br><span class="line">Unlocking FIP ...</span><br><span class="line"></span><br><span class="line">Writing from /tmp/mt7981_nradio_c8-660-u-boot-web.fip to FIP ...</span><br><span class="line">root@nradio:/tmp#</span><br><span class="line">root@nradio:/tmp# mtd write /tmp/immortalwrt-mediatek-mt7981-nradio_wt9103-squashfs-factory.bin ubi</span><br><span class="line">Unlocking ubi ...</span><br><span class="line"></span><br><span class="line">Writing from /tmp/immortalwrt-mediatek-mt7981-nradio_wt9103-squashfs-factory.bin to ubi ...</span><br><span class="line">root@nradio:/tmp#</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="https://img10.360buyimg.com/babel/jfs/t20251110/179976/32/41178/5463/654f0c84Fa98a64df/626cb56c05e6d774.png" alt="image-20231111130922449"></p>
+<p><img src="https://img10.360buyimg.com/babel/jfs/t20251110/198928/21/37771/33461/654f0d25F4ddbafd4/974dc5355b92b7a9.png" alt="image-20231111131202554"></p>
+<p><img src="https://img10.360buyimg.com/babel/jfs/t20251110/96271/33/37008/46354/654f0d2cF2e804eaa/f492a58b8c0f8ad7.png" alt="image-20231111131209340"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://170721.xyz">Zy143L</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://170721.xyz/shizuku/124648.html">https://170721.xyz/shizuku/124648.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://170721.xyz" target="_blank">宁宁's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Linux/">Linux</a><a class="post-meta__tags" href="/tags/%E9%AB%98%E9%80%9A/">高通</a><a class="post-meta__tags" href="/tags/%E9%9A%8F%E8%BA%ABWIFI/">随身WIFI</a></div><div class="post_share"></div></div><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/shizuku/064401.html" title="TZ103系列 算法分析"><img class="cover" src="https://img10.360buyimg.com/ddimg/jfs/t1/49658/14/23368/20614/64940958Febc8b43f/e36a1a70517eb0fa.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-06-22</div><div class="title">TZ103系列 算法分析</div></div></a></div><div><a href="/shizuku/063328.html" title="ZTE固件解包与打包"><img class="cover" src="https://img14.360buyimg.com/ddimg/jfs/t1/209485/14/31861/84634/6461a0cdFe5c140a3/04e1ce6b3d4cdaab.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-06-22</div><div class="title">ZTE固件解包与打包</div></div></a></div><div><a href="/shizuku/051911.html" title="SP970 V3 硬件与固件"><img class="cover" src="https://m.360buyimg.com/babel/jfs/t1/144501/21/25863/76872/62f2c1a4Ee623b799/67d926707202ef22.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-05-16</div><div class="title">SP970 V3 硬件与固件</div></div></a></div><div><a href="/shizuku/042422.html" title="UFI001B_MB_ET 硬件与固件"><img class="cover" src="https://m.360buyimg.com/babel/jfs/t1/111810/8/29506/139159/62f2c44eEd5d5ca5b/03db1fbc1d502128.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-04-27</div><div class="title">UFI001B_MB_ET 硬件与固件</div></div></a></div><div><a href="/shizuku/045009.html" title="UFI003_MB_V02 硬件与固件"><img class="cover" src="https://m.360buyimg.com/babel/jfs/t1/138949/14/28419/146464/62f2c3c7E5e64ea9e/85197cbc28f90b0a.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-04-27</div><div class="title">UFI003_MB_V02 硬件与固件</div></div></a></div><div><a href="/shizuku/040709.html" title="UFI001C_MB_01 硬件与固件"><img class="cover" src="https://m.360buyimg.com/babel/jfs/t1/179945/30/27719/155086/62f2c50eE0466bd5d/57e8979049db800c.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-04-27</div><div class="title">UFI001C_MB_01 硬件与固件</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/tx.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Zy143L</div><div class="author-info__description">前天是小兔，昨天是小鹿，今天是你。</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">27</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">16</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Zy143L"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Zy143L" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:zy143l@foxmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="sticky_layout"></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Zy143L</div><div class="footer_custom_text">前天是小兔，昨天是小鹿，今天是你。</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="/pluginsSrc/@fancyapps/ui/dist/fancybox/fancybox.umd.js?v=5.0.33"></script><script src="/pluginsSrc/instant.page/instantpage.js?v=5.2.0" type="module"></script><div class="js-pjax"></div><script defer="defer" id="fluttering_ribbon" mobile="false" src="/pluginsSrc/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js?v=1.1.3"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div></body></html>

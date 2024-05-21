@@ -1,0 +1,171 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>交叉编译ARM CH9102X驱动 | 宁宁's Blog</title><meta name="author" content="Zy143L"><meta name="copyright" content="Zy143L"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="交叉编译ARM下的CH9102X驱动官方原始源码编译123456789101112131415161718192021222324252627make -C ~&amp;#x2F;linux  M&amp;#x3D;~&amp;#x2F;ch343ser_linux&amp;#x2F;driver modulesmake[1]: Entering directory &amp;amp;"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://170721.xyz/shizuku/064535.html"><link rel="preconnect"/><link rel="preconnect" href="//static.cloudflareinsights.com"/><link rel="preconnect" href="//www.clarity.ms"/><meta name="google-site-verification" content="bN16XKV6xwtRGTvX1sw4mOJxS8pFqyAlHnNvQtE-wUg"/><meta name="baidu-site-verification" content="code-hZa23BQzZ9"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="/pluginsSrc/@fortawesome/fontawesome-free/css/all.min.css?v=6.5.1"><link rel="stylesheet" href="/pluginsSrc/@fancyapps/ui/dist/fancybox/fancybox.css?v=5.0.33" media="print" onload="this.media='all'"><script defer="defer" data-pjax="data-pjax" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;4f47f8db2b74431c9f30e3680209e627&quot;}"></script><script>(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "bmcaragj2c");</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.json","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: '/pluginsSrc/@egjs/infinitegrid/dist/infinitegrid.min.js?v=4.11.1',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '交叉编译ARM CH9102X驱动',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-08-10 04:16:49'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/shizuku.css"><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/tx.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">27</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">16</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://m.360buyimg.com/babel/jfs/t1/207961/21/25536/33341/62f2c089Ec9fff357/fb3e0aa49a9d34b0.png')"><nav id="nav"><span id="blog-info"><a href="/" title="宁宁's Blog"><span class="site-name">宁宁's Blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">交叉编译ARM CH9102X驱动</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-06-09T00:45:35.000Z" title="发表于 2022-06-09 08:45:35">2022-06-09</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-08-09T20:16:49.754Z" title="更新于 2022-08-10 04:16:49">2022-08-10</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">447</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>2分钟</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="交叉编译ARM下的CH9102X驱动"><a href="#交叉编译ARM下的CH9102X驱动" class="headerlink" title="交叉编译ARM下的CH9102X驱动"></a>交叉编译ARM下的CH9102X驱动</h1><h2 id="官方原始源码编译"><a href="#官方原始源码编译" class="headerlink" title="官方原始源码编译"></a>官方原始源码编译</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">make -C ~/linux  M=~/ch343ser_linux/driver modules</span><br><span class="line">make[<span class="number">1</span>]: Entering directory <span class="string">&#x27;~/linux&#x27;</span></span><br><span class="line"></span><br><span class="line">  CC [M]  ~/ch343ser_linux/driver/ch343.o</span><br><span class="line">~/ch343ser_linux/driver/ch343.c:<span class="number">1684</span>:<span class="number">17</span>: error: initialization of ‘<span class="type">unsigned</span> <span class="type">int</span> (*)(<span class="keyword">struct</span> tty_struct *)’ from incompatible pointer type ‘<span class="type">int</span> (*)(<span class="keyword">struct</span> tty_struct *)’ [-Werror=incompatible-pointer-types]</span><br><span class="line"> <span class="number">1684</span> |  .write_room =  ch343_tty_write_room,</span><br><span class="line">      |                 ^~~~~~~~~~~~~~~~~~~~</span><br><span class="line">~/ch343ser_linux/driver/ch343.c:<span class="number">1684</span>:<span class="number">17</span>: note: (near initialization <span class="keyword">for</span> ‘ch343_ops.write_room’)</span><br><span class="line">~/ch343ser_linux/driver/ch343.c:<span class="number">1686</span>:<span class="number">21</span>: error: initialization of ‘<span class="type">unsigned</span> <span class="type">int</span> (*)(<span class="keyword">struct</span> tty_struct *)’ from incompatible pointer type ‘<span class="type">int</span> (*)(<span class="keyword">struct</span> tty_struct *)’ [-Werror=incompatible-pointer-types]</span><br><span class="line"> <span class="number">1686</span> |  .chars_in_buffer = ch343_tty_chars_in_buffer,</span><br><span class="line">      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~</span><br><span class="line">~/ch343ser_linux/driver/ch343.c:<span class="number">1686</span>:<span class="number">21</span>: note: (near initialization <span class="keyword">for</span> ‘ch343_ops.chars_in_buffer’)</span><br><span class="line">~/ch343ser_linux/driver/ch343.c: In function ‘ch343_init’:</span><br><span class="line">~/ch343ser_linux/driver/ch343.c:<span class="number">1699</span>:<span class="number">21</span>: error: implicit declaration of function ‘alloc_tty_driver’ [-Werror=implicit-function-declaration]</span><br><span class="line"> <span class="number">1699</span> |  ch343_tty_driver = alloc_tty_driver(CH343_TTY_MINORS);</span><br><span class="line">      |                     ^~~~~~~~~~~~~~~~</span><br><span class="line">~/ch343ser_linux/driver/ch343.c:<span class="number">1699</span>:<span class="number">19</span>: warning: assignment to ‘<span class="class"><span class="keyword">struct</span> <span class="title">tty_driver</span> *’ <span class="title">from</span> ‘<span class="title">int</span>’ <span class="title">makes</span> <span class="title">pointer</span> <span class="title">from</span> <span class="title">integer</span> <span class="title">without</span> <span class="title">a</span> <span class="title">cast</span> [-<span class="title">Wint</span>-<span class="title">conversion</span>]</span></span><br><span class="line"><span class="class"> 1699 |  <span class="title">ch343_tty_driver</span> =</span> alloc_tty_driver(CH343_TTY_MINORS);</span><br><span class="line">      |                   ^</span><br><span class="line">~/ch343ser_linux/driver/ch343.c:<span class="number">1716</span>:<span class="number">3</span>: error: implicit declaration of function ‘put_tty_driver’ [-Werror=implicit-function-declaration]</span><br><span class="line"> <span class="number">1716</span> |   put_tty_driver(ch343_tty_driver);</span><br><span class="line">      |   ^~~~~~~~~~~~~~</span><br><span class="line">cc1: some warnings being treated as errors</span><br><span class="line">make[<span class="number">2</span>]: *** [scripts/Makefile.build:<span class="number">277</span>: ~/ch343ser_linux/driver/ch343.o] Error <span class="number">1</span></span><br><span class="line">make[<span class="number">1</span>]: *** [Makefile:<span class="number">1868</span>: ~/ch343ser_linux/driver] Error <span class="number">2</span></span><br><span class="line">make[<span class="number">1</span>]: Leaving directory <span class="string">&#x27;~/linux&#x27;</span></span><br><span class="line">make: *** [Makefile:<span class="number">6</span>: <span class="keyword">default</span>] Error <span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<div class="note warning no-icon flat"><p>可以看到出现大量报错</p>
+</div>
+
+<div class="note danger no-icon flat"><p>WCH官方驱动 使用了废弃函数 会导致编译失败 这里使用Fork分支</p>
+</div>
+
+<h2 id="修复分支编译"><a href="#修复分支编译" class="headerlink" title="修复分支编译"></a>修复分支编译</h2><p><strong>alloc_tty_driver -&gt; tty_alloc_driver</strong><br><strong>put_tty_driver -&gt; tty_driver_kref_put</strong></p>
+<div class="note info no-icon flat"><p>驱动适用于 <strong>CH342&#x2F;CH343&#x2F;CH344&#x2F;CH347&#x2F;CH9101&#x2F;CH9102&#x2F;CH9103&#x2F;CH9143</strong><br>代码Git仓库地址 <a target="_blank" rel="noopener" href="https://github.com/GreatestCapacity/ch343ser_linux">https://github.com/GreatestCapacity/ch343ser_linux</a></p>
+</div>
+
+<h3 id="拉取分支"><a href="#拉取分支" class="headerlink" title="拉取分支"></a>拉取分支</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/GreatestCapacity/ch343ser_linux.git</span><br><span class="line">cd ch343ser_linux</span><br></pre></td></tr></table></figure>
+
+<h3 id="创建Makefile"><a href="#创建Makefile" class="headerlink" title="创建Makefile"></a>创建Makefile</h3><figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">KERNELDIR := ~/linux</span><br><span class="line"><span class="comment"># 使用你的Linux源码地址目录</span></span><br><span class="line"></span><br><span class="line">PWD :=<span class="variable">$(<span class="built_in">shell</span> pwd)</span></span><br><span class="line">obj-m := ch343.o</span><br><span class="line"></span><br><span class="line"><span class="section">default:</span></span><br><span class="line">        <span class="variable">$(MAKE)</span> -C <span class="variable">$(KERNELDIR)</span>  M=<span class="variable">$(PWD)</span> modules</span><br><span class="line"><span class="section">clean:</span></span><br><span class="line">        <span class="variable">$(MAKE)</span> -C <span class="variable">$(KERNELDIR)</span>  M=<span class="variable">$(PWD)</span> clean</span><br><span class="line">        rm -rf *.mk .tmp_versions Module.symvers *.mod.c *.o *.ko .*.cmd Module.markers modules.order</span><br><span class="line"><span class="section">load:</span></span><br><span class="line">        insmod ch343.ko</span><br><span class="line"><span class="section">unload:</span></span><br><span class="line">        rmmod ch343</span><br><span class="line"><span class="section">install: default</span></span><br><span class="line">        mkdir -p /lib/modules/<span class="variable">$(<span class="built_in">shell</span> uname -r)</span>/kernel/drivers/usb/serial/</span><br><span class="line">        cp -f ./ch343.ko /lib/modules/<span class="variable">$(<span class="built_in">shell</span> uname -r)</span>/kernel/drivers/usb/serial/</span><br><span class="line">        depmod -a</span><br><span class="line"><span class="section">uninstall:</span></span><br><span class="line">        rm -rf /lib/modules/<span class="variable">$(<span class="built_in">shell</span> uname -r)</span>/kernel/drivers/usb/serial/ch343.ko</span><br><span class="line">        depmod -a</span><br></pre></td></tr></table></figure>
+
+<h3 id="执行编译"><a href="#执行编译" class="headerlink" title="执行编译"></a>执行编译</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">export</span> CROSS_COMPILE=aarch64-linux-gnu-</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">export</span> ARCH=arm64</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">make</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="载入文件"><a href="#载入文件" class="headerlink" title="载入文件"></a>载入文件</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insmod ch343.ko</span><br></pre></td></tr></table></figure>
+
+<div class="note success flat"><p><strong>dmesg查看日志 可以看到已经成功载入并识别</strong></p>
+</div> 
+
+<p><img src="https://m.360buyimg.com/babel/jfs/t1/61379/14/20594/21868/62f2c0a7E7fc6e187/4ce5b4354dc99baa.png"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://170721.xyz">Zy143L</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://170721.xyz/shizuku/064535.html">https://170721.xyz/shizuku/064535.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://170721.xyz" target="_blank">宁宁's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Linux/">Linux</a><a class="post-meta__tags" href="/tags/%E9%A9%B1%E5%8A%A8/">驱动</a></div><div class="post_share"></div></div><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/shizuku/124648.html" title="5G CPE C8-660"><img class="cover" src="https://img12.360buyimg.com/ddimg/jfs/t1/246023/18/9590/5447/664c6e65F4789ecfe/98c47e949ddad67f.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-20</div><div class="title">5G CPE C8-660</div></div></a></div><div><a href="/shizuku/065919.html" title="编译UFI设备的Debian固件"><img class="cover" src="https://m.360buyimg.com/babel/jfs/t1/41762/13/18154/17800/62f2c0c0E93bd7cca/ac2866345d2d3522.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-09</div><div class="title">编译UFI设备的Debian固件</div></div></a></div><div><a href="/shizuku/051919.html" title="GT106 Debian固件"><img class="cover" src="https://img14.360buyimg.com/ddimg/jfs/t1/204504/25/34817/107984/645dd1c9F3ee0ccb8/544012c0c55bf454.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-05-12</div><div class="title">GT106 Debian固件</div></div></a></div><div><a href="/shizuku/064401.html" title="TZ103系列 算法分析"><img class="cover" src="https://img10.360buyimg.com/ddimg/jfs/t1/49658/14/23368/20614/64940958Febc8b43f/e36a1a70517eb0fa.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-06-22</div><div class="title">TZ103系列 算法分析</div></div></a></div><div><a href="/shizuku/065359.html" title="UFI的Debian固件下载"><img class="cover" src="https://m.360buyimg.com/babel/jfs/t1/163957/29/29531/7916/62f2c306Ea111b363/1af47436ab5f069a.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-10</div><div class="title">UFI的Debian固件下载</div></div></a></div><div><a href="/shizuku/063328.html" title="ZTE固件解包与打包"><img class="cover" src="https://img14.360buyimg.com/ddimg/jfs/t1/209485/14/31861/84634/6461a0cdFe5c140a3/04e1ce6b3d4cdaab.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-06-22</div><div class="title">ZTE固件解包与打包</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/tx.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Zy143L</div><div class="author-info__description">前天是小兔，昨天是小鹿，今天是你。</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">27</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">16</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Zy143L"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Zy143L" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:zy143l@foxmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91ARM%E4%B8%8B%E7%9A%84CH9102X%E9%A9%B1%E5%8A%A8"><span class="toc-number">1.</span> <span class="toc-text">交叉编译ARM下的CH9102X驱动</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%98%E6%96%B9%E5%8E%9F%E5%A7%8B%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91"><span class="toc-number">1.1.</span> <span class="toc-text">官方原始源码编译</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E5%A4%8D%E5%88%86%E6%94%AF%E7%BC%96%E8%AF%91"><span class="toc-number">1.2.</span> <span class="toc-text">修复分支编译</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%89%E5%8F%96%E5%88%86%E6%94%AF"><span class="toc-number">1.2.1.</span> <span class="toc-text">拉取分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BAMakefile"><span class="toc-number">1.2.2.</span> <span class="toc-text">创建Makefile</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%A7%E8%A1%8C%E7%BC%96%E8%AF%91"><span class="toc-number">1.2.3.</span> <span class="toc-text">执行编译</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%BD%E5%85%A5%E6%96%87%E4%BB%B6"><span class="toc-number">1.2.4.</span> <span class="toc-text">载入文件</span></a></li></ol></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Zy143L</div><div class="footer_custom_text">前天是小兔，昨天是小鹿，今天是你。</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="/pluginsSrc/@fancyapps/ui/dist/fancybox/fancybox.umd.js?v=5.0.33"></script><script src="/pluginsSrc/instant.page/instantpage.js?v=5.2.0" type="module"></script><div class="js-pjax"></div><script defer="defer" id="fluttering_ribbon" mobile="false" src="/pluginsSrc/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js?v=1.1.3"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div></body></html>

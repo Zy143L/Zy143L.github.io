@@ -1,0 +1,210 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>TZ103系列 算法分析 | 宁宁's Blog</title><meta name="author" content="Zy143L"><meta name="copyright" content="Zy143L"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="特别警告文章仅供学习参考，严禁非法使用，如非法使用，而导致的一切后果，由使用者自行承担。    算法分析ZTE系列 WEB交互是由goahead程序负责 使用编程器提取固件 解包 提取程序 (解包教程可以参考上一篇文章) 使用IDA分析程序 使用Shift+F12 进入字符串模式 Alt+T搜索 s"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://170721.xyz/shizuku/064401.html"><link rel="preconnect"/><link rel="preconnect" href="//static.cloudflareinsights.com"/><link rel="preconnect" href="//www.clarity.ms"/><meta name="google-site-verification" content="bN16XKV6xwtRGTvX1sw4mOJxS8pFqyAlHnNvQtE-wUg"/><meta name="baidu-site-verification" content="code-hZa23BQzZ9"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="/pluginsSrc/@fortawesome/fontawesome-free/css/all.min.css?v=6.5.1"><link rel="stylesheet" href="/pluginsSrc/@fancyapps/ui/dist/fancybox/fancybox.css?v=5.0.33" media="print" onload="this.media='all'"><script defer="defer" data-pjax="data-pjax" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;4f47f8db2b74431c9f30e3680209e627&quot;}"></script><script>(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "bmcaragj2c");</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.json","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: '/pluginsSrc/@egjs/infinitegrid/dist/infinitegrid.min.js?v=4.11.1',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'TZ103系列 算法分析',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-06-22 16:42:53'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/shizuku.css"><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/tx.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">27</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">16</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://img10.360buyimg.com/ddimg/jfs/t1/49658/14/23368/20614/64940958Febc8b43f/e36a1a70517eb0fa.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="宁宁's Blog"><span class="site-name">宁宁's Blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">TZ103系列 算法分析</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-06-22T07:44:01.000Z" title="发表于 2023-06-22 15:44:01">2023-06-22</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-06-22T08:42:53.139Z" title="更新于 2023-06-22 16:42:53">2023-06-22</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">934</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>5分钟</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="特别警告"><a href="#特别警告" class="headerlink" title="特别警告"></a>特别警告</h2><div class="note warning flat"><p><strong>文章仅供学习参考，严禁非法使用，如非法使用，而导致的一切后果，由使用者自行承担。</strong></p>
+</div>
+
+<hr>
+<h2 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h2><p><strong>ZTE系列 WEB交互是由goahead程序负责</strong></p>
+<p><strong>使用编程器提取固件 解包 提取程序 (解包教程可以参考上一篇文章)</strong></p>
+<p><strong>使用IDA分析程序 使用Shift+F12 进入字符串模式 Alt+T搜索 sim select 等字样</strong></p>
+<p><img src="https://img11.360buyimg.com/ddimg/jfs/t1/94495/10/27626/122888/6493fff8F12adebb0/d624cd70c6ed6162.jpg" alt="image.png"></p>
+<p><strong>定位进入</strong> </p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">.text:00015CF8                 PUSH.W          &#123;R4-R11,LR&#125;</span><br><span class="line">.text:00015CFC                 SUB             SP, SP, #0x24</span><br><span class="line">.text:00015CFE                 ADD.W           R10, SP, #0x48+s</span><br><span class="line">.text:00015D02                 ADD             R4, SP, #0x48+var_44</span><br><span class="line">.text:00015D04                 MOV             R5, R0</span><br><span class="line">.text:00015D06                 MOVS            R1, #0  ; c</span><br><span class="line">.text:00015D08                 MOVS            R2, #0x10 ; n</span><br><span class="line">.text:00015D0A                 MOV             R0, R10 ; s</span><br><span class="line">.text:00015D0C                 LDR             R6, =(byte_2A19B - 0x15D1C)</span><br><span class="line">.text:00015D0E                 BLX             memset</span><br><span class="line">.text:00015D12                 MOVS            R1, #0  ; c</span><br><span class="line">.text:00015D14                 MOVS            R2, #0xA ; n</span><br><span class="line">.text:00015D16                 MOV             R0, R4  ; s</span><br><span class="line">.text:00015D18                 ADD             R6, PC  ; byte_2A19B</span><br><span class="line">.text:00015D1A                 BLX             memset</span><br><span class="line">.text:00015D1E                 LDR             R1, =(aSimSelect - 0x15D28) ; &quot;sim_select&quot;</span><br><span class="line">.text:00015D20                 MOV             R2, R6</span><br><span class="line">.text:00015D22                 MOV             R0, R5</span><br><span class="line">.text:00015D24                 ADD             R1, PC  ; &quot;sim_select&quot;</span><br><span class="line">.text:00015D26                 BL              sub_DCE8</span><br><span class="line">.text:00015D2A                 MOV             R8, R0</span><br><span class="line">.text:00015D2C                 LDR             R0, =(aAlkSimSelectSi - 0x15D34) ; &quot;alk_sim_select:sim_select-&gt;%s\n&quot;</span><br><span class="line">.text:00015D2E                 MOV             R1, R8</span><br><span class="line">.text:00015D30                 ADD             R0, PC  ; &quot;alk_sim_select:sim_select-&gt;%s\n&quot;</span><br><span class="line">.text:00015D32                 BLX             printf</span><br><span class="line">.text:00015D36                 LDR             R1, =(aAdminPwd - 0x15D40) ; &quot;admin_pwd&quot;</span><br><span class="line">.text:00015D38                 MOV             R0, R5</span><br><span class="line">.text:00015D3A                 MOV             R2, R6</span><br><span class="line">.text:00015D3C                 ADD             R1, PC  ; &quot;admin_pwd&quot;</span><br><span class="line">.text:00015D3E                 BL              sub_DCE8</span><br><span class="line">.text:00015D42                 MOV             R9, R0</span><br><span class="line">.text:00015D44                 LDR             R0, =(aAlkSimSelectAd - 0x15D4C) ; &quot;alk_sim_select:admin_pwd-&gt;%s\n&quot;</span><br><span class="line">.text:00015D46                 MOV             R1, R9</span><br><span class="line">.text:00015D48                 ADD             R0, PC  ; &quot;alk_sim_select:admin_pwd-&gt;%s\n&quot;</span><br><span class="line">.text:00015D4A                 BLX             printf</span><br><span class="line">.text:00015D4E                 CMP.W           R8, #0</span><br><span class="line">.text:00015D52                 BNE             loc_15D64</span><br><span class="line">.text:00015D54                 LDR             R0, =(aAlkSimSelectEm - 0x15D5A) ; &quot;alk_sim_select:empty!\n&quot;</span><br><span class="line">.text:00015D56                 ADD             R0, PC  ; &quot;alk_sim_select:empty!\n&quot;</span><br><span class="line">.text:00015D58                 BLX             printf</span><br><span class="line">.text:00015D5C                 LDR             R1, =(aFailure - 0x15D64) ; &quot;failure&quot;</span><br><span class="line">.text:00015D5E                 MOV             R0, R5</span><br><span class="line">.text:00015D60                 ADD             R1, PC  ; &quot;failure&quot;</span><br><span class="line">.text:00015D62                 B               loc_15E66</span><br><span class="line">.text:00015D64 ; ---------------------------------------------------------------------------</span><br></pre></td></tr></table></figure>
+
+<p><strong>选定Push Alt+P Create Function 再F5转伪C</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 这里只粘贴了部分关键代码</span></span><br><span class="line"><span class="keyword">if</span> (++v8 == <span class="number">15</span>) &#123;</span><br><span class="line">    <span class="built_in">sprintf</span>(v15, <span class="string">&quot;%c%c&quot;</span>, (<span class="type">unsigned</span> __int8) s[<span class="number">3</span>], (<span class="type">unsigned</span> __int8) s[<span class="number">6</span>]); 	</span><br><span class="line">    <span class="comment">// 取IMEI 4位/7位 拼接</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;[%s]:admin_code %s\n&quot;</span>, <span class="string">&quot;alk_sim_select&quot;</span>, v15);</span><br><span class="line">    v9 = atoi(v15) + <span class="number">125</span>; 													</span><br><span class="line">    <span class="comment">// v15 与 125 相加</span></span><br><span class="line">    <span class="built_in">memset</span>(v15, <span class="number">0</span>, <span class="number">0xA</span> u);</span><br><span class="line">    sub_15C9C(v15, (<span class="type">int</span>) s, <span class="number">15</span>); 											</span><br><span class="line">    <span class="comment">// 调用sub_15C9C方法计算</span></span><br><span class="line">    v10 = <span class="number">4</span> * (atoi(v15) + v9);												</span><br><span class="line">    <span class="comment">// 得到sub_15C9C计算结果与v9相加 再*4 得到密码</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;[%s]:pwd_code %d\n&quot;</span>, <span class="string">&quot;alk_sim_select&quot;</span>, v10);</span><br><span class="line">    <span class="built_in">memset</span>(v15, <span class="number">0</span>, <span class="number">0xA</span> u);</span><br><span class="line">    <span class="built_in">sprintf</span>(v15, <span class="string">&quot;%d&quot;</span>, v10);</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">strlen</span>(v3) &amp;&amp; !<span class="built_in">strcmp</span>(v3, v15)) &#123;</span><br><span class="line">        v11 = cfg_set( &amp; unk_2D55D, v2);</span><br><span class="line">        cfg_save(v11);</span><br><span class="line">        cfg_set(<span class="string">&quot;switch_sim_flag&quot;</span>, <span class="string">&quot;1&quot;</span>);</span><br><span class="line">        v12 = <span class="built_in">strcmp</span>(v2, <span class="string">&quot;1&quot;</span>);</span><br><span class="line">        <span class="keyword">if</span> (v12) &#123;</span><br><span class="line">            v12 = <span class="number">0</span>;</span><br><span class="line">            v13 = <span class="string">&quot;AT+ZCARDSWITCH=3\r\n&quot;</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            v13 = <span class="string">&quot;AT+ZCARDSWITCH=0\r\n&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        get_modem_info(v13, v12, v12);</span><br><span class="line">        sleep(<span class="number">1</span> u);</span><br><span class="line">        v4 = a1;</span><br><span class="line">        v5 = <span class="string">&quot;success&quot;</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;alk_sim_select:wrong pwd!\n&quot;</span>);</span><br><span class="line">        v4 = a1;</span><br><span class="line">        v5 = <span class="string">&quot;failure&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sub_1B0E4(v4, v5);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// sub_15C9C 方法</span></span><br><span class="line"><span class="type">int</span> __fastcall <span class="title function_">sub_15C9C</span><span class="params">(<span class="type">char</span> *a1, <span class="type">int</span> a2, <span class="type">int</span> a3)</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="type">char</span> v6; <span class="comment">// r3</span></span><br><span class="line">  <span class="type">char</span> s[<span class="number">36</span>]; <span class="comment">// [sp+4h] [bp-24h] BYREF</span></span><br><span class="line"></span><br><span class="line">  <span class="built_in">memset</span>(s, <span class="number">0</span>, <span class="number">0xA</span>u);</span><br><span class="line">  <span class="built_in">strcpy</span>(s, (<span class="type">const</span> <span class="type">char</span> *)(a3 - <span class="number">6</span> + a2));  </span><br><span class="line">    <span class="comment">// 取末尾6位</span></span><br><span class="line">  v6 = s[<span class="number">1</span>];</span><br><span class="line">  s[<span class="number">1</span>] = s[<span class="number">2</span>];</span><br><span class="line">  s[<span class="number">2</span>] = v6;								</span><br><span class="line">    <span class="comment">// 交换取值2-3位</span></span><br><span class="line">  <span class="built_in">sprintf</span>(a1, <span class="string">&quot;%s&quot;</span>, s);</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">printf</span>(<span class="string">&quot;[%s] generate pwd %s\n&quot;</span>, <span class="string">&quot;alk_generate_password&quot;</span>, a1);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="算法转写"><a href="#算法转写" class="headerlink" title="算法转写"></a>算法转写</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Python版本</span></span><br><span class="line">imei = <span class="string">&quot;123456789012345&quot;</span></span><br><span class="line">a = imei[<span class="number">3</span>] + imei[<span class="number">6</span>]  <span class="comment"># 47 =  4 + 7</span></span><br><span class="line">b = <span class="built_in">int</span>(a) + <span class="number">0x7d</span>  <span class="comment"># 172 = 47 + 125</span></span><br><span class="line">c = imei[-<span class="number">6</span>:]  <span class="comment"># 012345</span></span><br><span class="line">d = c[<span class="number">0x0</span>] + c[<span class="number">0x2</span>] + c[<span class="number">0x1</span>] + c[-<span class="number">3</span>:]  <span class="comment"># 021345</span></span><br><span class="line">f = <span class="built_in">int</span>(d) + b  <span class="comment"># 021345 + 172</span></span><br><span class="line">e = <span class="number">0x4</span> * f  <span class="comment"># 4  * 021517</span></span><br><span class="line"><span class="built_in">print</span>(e) <span class="comment"># 86068</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 一句话版本</span></span><br><span class="line"><span class="number">4</span> * (<span class="built_in">int</span>(imei[-<span class="number">6</span>:][<span class="number">0</span>] + imei[-<span class="number">6</span>:][<span class="number">2</span>] + imei[-<span class="number">6</span>:][<span class="number">1</span>] + imei[-<span class="number">6</span>:][-<span class="number">3</span>:]) + (<span class="built_in">int</span>(imei[<span class="number">3</span>] + imei[<span class="number">6</span>]) + <span class="number">125</span>))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Javascript版本</span></span><br><span class="line"><span class="keyword">const</span> imei = <span class="string">&quot;123456789012345&quot;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">4</span> * (<span class="built_in">parseInt</span>(imei.<span class="title function_">slice</span>(-<span class="number">6</span>)[<span class="number">0x0</span>] + imei.<span class="title function_">slice</span>(-<span class="number">6</span>)[<span class="number">0x2</span>] + imei.<span class="title function_">slice</span>(-<span class="number">6</span>)[<span class="number">0x1</span>] + imei.<span class="title function_">slice</span>(-<span class="number">6</span>).<span class="title function_">slice</span>(-<span class="number">3</span>)) + (<span class="built_in">parseInt</span>(imei[<span class="number">3</span>] + imei[<span class="number">6</span>]) + <span class="number">0x7d</span>)))</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="在线计算"><a href="#在线计算" class="headerlink" title="在线计算"></a>在线计算</h2><div class="note success no-icon flat"><div class="input-container">
+  <input type="text" id="imeiInput" maxlength="15" placeholder="请输入15位 IMEI" class="custom-input" />
+  <button onclick="calculate()" class="custom-button">计算</button>
+<button id="result" class="result-container custom-button" onclick="copyResult()" style="display: none;">
+<span id="resultIcon"><i class="fas fa-paste"></i></span>
+<span id="resultText">结果</span>
+</button>
+
+
+
+</div></div>
+
+
+
+<script>
+function calculate() {
+  var imei = document.getElementById("imeiInput").value;
+  var a = imei[3] + imei[6];
+  var b = parseInt(a) + 0x7d;
+  var c = imei.slice(-6);
+  var d = c[0] + c[2] + c[1] + c.slice(-3);
+  var e = 4 * (parseInt(d) + b);
+  var resultText = document.getElementById("resultText");
+  var resultButton = document.getElementById("result");
+  resultText.innerText = "密码: " + e;
+  resultButton.style.display = "inline-block"; // 显示按钮
+}
+
+function copyResult() {
+  var resultButton = document.getElementById("result");
+  var resultText = resultButton.innerText.replace("密码: ", ""); // 提取结果文本
+
+  navigator.clipboard.writeText(resultText)
+    .then(function() {
+      alert("结果已复制到剪贴板！");
+    })
+    .catch(function(error) {
+      console.error("复制失败：", error);
+    });
+}
+</script>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://170721.xyz">Zy143L</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://170721.xyz/shizuku/064401.html">https://170721.xyz/shizuku/064401.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://170721.xyz" target="_blank">宁宁's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Linux/">Linux</a><a class="post-meta__tags" href="/tags/%E9%9A%8F%E8%BA%ABWIFI/">随身WIFI</a></div><div class="post_share"></div></div><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/shizuku/124648.html" title="5G CPE C8-660"><img class="cover" src="https://img12.360buyimg.com/ddimg/jfs/t1/246023/18/9590/5447/664c6e65F4789ecfe/98c47e949ddad67f.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-20</div><div class="title">5G CPE C8-660</div></div></a></div><div><a href="/shizuku/063328.html" title="ZTE固件解包与打包"><img class="cover" src="https://img14.360buyimg.com/ddimg/jfs/t1/209485/14/31861/84634/6461a0cdFe5c140a3/04e1ce6b3d4cdaab.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-06-22</div><div class="title">ZTE固件解包与打包</div></div></a></div><div><a href="/shizuku/065919.html" title="编译UFI设备的Debian固件"><img class="cover" src="https://m.360buyimg.com/babel/jfs/t1/41762/13/18154/17800/62f2c0c0E93bd7cca/ac2866345d2d3522.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-09</div><div class="title">编译UFI设备的Debian固件</div></div></a></div><div><a href="/shizuku/064535.html" title="交叉编译ARM CH9102X驱动"><img class="cover" src="https://m.360buyimg.com/babel/jfs/t1/207961/21/25536/33341/62f2c089Ec9fff357/fb3e0aa49a9d34b0.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-09</div><div class="title">交叉编译ARM CH9102X驱动</div></div></a></div><div><a href="/shizuku/051919.html" title="GT106 Debian固件"><img class="cover" src="https://img14.360buyimg.com/ddimg/jfs/t1/204504/25/34817/107984/645dd1c9F3ee0ccb8/544012c0c55bf454.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-05-12</div><div class="title">GT106 Debian固件</div></div></a></div><div><a href="/shizuku/065359.html" title="UFI的Debian固件下载"><img class="cover" src="https://m.360buyimg.com/babel/jfs/t1/163957/29/29531/7916/62f2c306Ea111b363/1af47436ab5f069a.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-06-10</div><div class="title">UFI的Debian固件下载</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/tx.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Zy143L</div><div class="author-info__description">前天是小兔，昨天是小鹿，今天是你。</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">27</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">16</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Zy143L"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Zy143L" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:zy143l@foxmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%B9%E5%88%AB%E8%AD%A6%E5%91%8A"><span class="toc-number">1.</span> <span class="toc-text">特别警告</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90"><span class="toc-number">2.</span> <span class="toc-text">算法分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E8%BD%AC%E5%86%99"><span class="toc-number">3.</span> <span class="toc-text">算法转写</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%A8%E7%BA%BF%E8%AE%A1%E7%AE%97"><span class="toc-number">4.</span> <span class="toc-text">在线计算</span></a></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Zy143L</div><div class="footer_custom_text">前天是小兔，昨天是小鹿，今天是你。</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="/pluginsSrc/@fancyapps/ui/dist/fancybox/fancybox.umd.js?v=5.0.33"></script><script src="/pluginsSrc/instant.page/instantpage.js?v=5.2.0" type="module"></script><div class="js-pjax"></div><script defer="defer" id="fluttering_ribbon" mobile="false" src="/pluginsSrc/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js?v=1.1.3"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div></body></html>

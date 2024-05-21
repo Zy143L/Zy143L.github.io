@@ -1,0 +1,149 @@
+.avatar-img img:hover {
+  -webkit-transform: rotate(0deg) !important;
+  -moz-transform: rotate(0deg) !important;
+  -o-transform: rotate(0deg) !important;
+  -ms-transform: rotate(0deg) !important;
+  transform: rotate(0deg) !important;
+}
+
+#body-wrap {
+	background: linear-gradient(90deg,
+		rgba(247, 149, 51, 0.1) 0,
+		rgba(243, 112, 85, 0.1) 15%,
+		rgba(239, 78, 123, 0.1) 30%,
+		rgba(161, 102, 171, 0.1) 44%,
+		rgba(80, 115, 184, 0.1) 58%,
+		rgba(16, 152, 173, 0.1) 72%,
+		rgba(7, 179, 155, 0.1) 86%,
+		rgba(109, 186, 130, 0.1) 100%);
+}
+
+/* #footer {
+  background: rgba(255, 255, 255, 0.15);
+  color: #000;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  backdrop-filter: saturate(100%) blur(5px);
+}
+
+#footer::before {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+#footer #footer-wrap {
+  color: var(--font-color);
+}
+
+#footer #footer-wrap a {
+  color: var(--font-color);
+} */
+
+
+#footer {
+	background: rgba(255, 255, 255, 0);
+	color: #000;
+	border-top-right-radius: 20px;
+	border-top-left-radius: 20px;
+	-webkit-backdrop-filter: saturate(100%) blur(5px);
+	backdrop-filter: saturate(100%) blur(5px)
+}
+
+#footer::before {
+	background: rgba(255, 255, 255, .15);
+}
+
+#footer #footer-wrap {
+	color: var(--font-color);
+}
+
+#footer #footer-wrap a {
+	color: var(--font-color);
+}
+
+/* 文章页背景 */
+.layout > div:first-child:not(.recent-posts) {
+  background: rgba(255, 255, 255, 0.3);
+}
+/* 所有背景（包括首页卡片、文章页、页面页等） */
+#recent-posts > .recent-post-item,
+.layout > div:first-child:not(.recent-posts),
+.layout_post > #page,
+.layout_post > #post,
+.read-mode .layout_post > #post {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+#recent-posts > .recent-post-item,
+.layout_page > div:first-child:not(.recent-posts),
+.layout_post > #page,
+.layout_post > #post,
+.read-mode .layout_post > #post {
+  background: var(--light_bg_color);
+}
+
+#aside-content .card-widget {
+  background: var(--light_bg_color);
+}
+
+/* #web_bg {
+  background: linear-gradient(
+    90deg,
+    rgba(247, 149, 51, 0.1),
+    rgba(243, 112, 85, 0.1) 15%,
+    rgba(239, 78, 123, 0.1) 30%,
+    rgba(161, 102, 171, 0.1) 44%,
+    rgba(80, 115, 184, 0.1) 58%,
+    rgba(16, 152, 173, 0.1) 72%,
+    rgba(7, 179, 155, 0.1) 86%,
+    rgba(109, 186, 130, 0.1),
+  );
+} */
+
+/* @font-face{
+  font-family: 'MiSans Normal';
+  
+  src: url('/font/MiSans-Normal.ttf') format("truetype");
+}
+
+body {
+  font-family: 'MiSans Normal';
+} */
+article p {
+  font-size: 15px;
+}
+#footer-wrap .footer_custom_text {
+  font-weight: bold;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+}
+
+.custom-input {
+  width: 200px; /* 调整输入框的宽度 */
+  padding: 8px 12px;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.custom-input:focus {
+  border-color: #40a9ff;
+}
+
+.custom-button {
+  background-color: #1890ff;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 8px; /* 添加按钮与输入框之间的间距 */
+}
+
+.result-container {
+  background-color: #5cb85c;
+  color: white;
+}
